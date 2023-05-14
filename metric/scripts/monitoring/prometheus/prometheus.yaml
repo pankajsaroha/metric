@@ -1,0 +1,8 @@
+scrape_configs:
+  - job_name: 'Spring Boot Application Input'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 3s
+    static_configs:
+      - targets: ['192.168.43.127:8080'] //add the ip address of the network (localhost won't work if promethes is running in docker)
+        labels:
+          application: 'Spring Boot Application Metrics'
